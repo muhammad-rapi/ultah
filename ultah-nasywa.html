@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Cinta Hatiku, Nasywa ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&family=Sacramento&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #ffc3a0, #f093fb, #764ba2);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .main-title {
+            font-family: 'Sacramento', cursive;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255,255,255,0.8);
+            animation: heartbeat 3s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 50%, 100% { transform: scale(1); }
+            25%, 75% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+        }
+
+        .age-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(25px);
+            border-radius: 35px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 30px 60px rgba(255, 182, 193, 0.3);
+            text-align: center;
+            transform: perspective(1000px) rotateX(5deg);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .age-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .age-card:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.05);
+            box-shadow: 0 40px 80px rgba(255, 182, 193, 0.4);
+        }
+
+        .age-number {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9a9e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.8);
+            animation: pulse 2.5s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .love-message-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 2rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(255, 182, 193, 0.2);
+        }
+
+        .love-message {
+            color: white;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .personal-touch {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 154, 158, 0.5);
+        }
+
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 550px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.2);
+        }
+
+        .countdown-item:nth-child(2) { animation-delay: 0.7s; }
+        .countdown-item:nth-child(3) { animation-delay: 1.4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b9d, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        .memory-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            max-width: 900px;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 2.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.15);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) rotate(3deg);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 30px 60px rgba(255, 182, 193, 0.25);
+        }
+
+        .memory-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        .memory-card:nth-child(2) .memory-emoji { animation-delay: 0.5s; }
+        .memory-card:nth-child(3) .memory-emoji { animation-delay: 1s; }
+        .memory-card:nth-child(4) .memory-emoji { animation-delay: 1.5s; }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .memory-title {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .memory-desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-item {
+            position: absolute;
+            animation: floatAround 25s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatAround {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-150px) rotate(360deg); }
+        }
+
+        .love-button {
+            background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9a9e, #f093fb);
+            background-size: 300% 300%;
+            animation: gradientShift 4s ease infinite;
+            border: none;
+            border-radius: 60px;
+            padding: 1.2rem 3rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 3rem;
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+            transition: all 0.4s ease;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .love-button:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.5);
+        }
+
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #ff6b9d;
+            animation: confettiFall 4s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .love-hearts {
+            position: fixed;
+            color: rgba(255, 182, 193, 0.6);
+            font-size: 1.5rem;
+            animation: heartFloat 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; transform: scale(1); }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .age-card { padding: 2.5rem; margin: 1.5rem 0; }
+            .love-message-box { padding: 2rem; }
+            .countdown-container { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .memory-cards { grid-template-columns: 1fr; }
+            .main-title { margin-bottom: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <div class="container">
+        <h1 class="main-title">Nasywa Artanti Indevi</h1>
+        <p class="subtitle">Cinta hati yang paling berharga 💖</p>
+        
+        <div class="age-card">
+            <div class="age-number">19</div>
+            <div style="color: white; font-size: 1.8rem; margin-top: 1.5rem; font-weight: 300;">Tahun Menjadi Manusia Lucu</div>
+        </div>
+
+        <div class="love-message-box">
+            <p class="love-message">
+                Sayang ku yang paling cantik dan baik hati 💕<br><br>
+                Hari ini kamu genap <span class="personal-touch">19 tahun</span> dan aku bersyukur banget bisa 
+                merayakan momen spesial ini bersamamu. Setiap hari bersamamu itu kayak hadiah terindah 
+                yang pernah aku terima. <br><br>
+                Semoga di umur yang baru ini, semua impian dan cita-citamu terwujud. 
+                Semoga kamu selalu <span class="personal-touch">sehat, bahagia, dan dimudahkan</span> 
+                dalam segala hal. Dan yang paling penting, semoga kita bisa terus bersama 
+                sampai tua nanti 👴👵<br><br>
+                <span class="personal-touch">I love you more than words can say, Nasywa ✨</span>
+            </p>
+        </div>
+
+        <div class="countdown-container" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Jam</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Menit</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Detik</span>
+            </div>
+        </div>
+
+        <div class="memory-cards">
+            <div class="memory-card">
+                <span class="memory-emoji">💝</span>
+                <div class="memory-title">Hadiah Terbaik Hidupku</div>
+                <div class="memory-desc">Kehadiranmu di hidup aku adalah hadiah paling berharga yang pernah aku dapatkan. Thank you for being my everything.</div>
+            </div>
+            <div class="memory-card">
+                <span class="memory-emoji">🌟</span>
+                <div class="memory-title">Bintangku di Malam Hari</div>
+                <div class="memory-desc">Kamu selalu jadi cahaya yang menerangi hari-hari aku, bikin semuanya jadi lebih indah dan bermakna.</div>
+            </div>
+            <div class="memory-card">
+                <span class="memory-emoji">🦋</span>
+                <div class="memory-title">Transformasi Cinta</div>
+                <div class="memory-desc">Sejak kenal kamu, hidup aku berubah jadi lebih berwarna. Kamu bukan cuma pacar, tapi juga sahabat terbaik aku.</div>
+            </div>
+            <div class="memory-card">
+                <span class="memory-emoji">🏡</span>
+                <div class="memory-title">Home is Where You Are</div>
+                <div class="memory-desc">Di manapun kamu berada, disitu rumah aku. Pelukan kamu adalah tempat paling nyaman di dunia ini.</div>
+            </div>
+        </div>
+
+        <button class="love-button" onclick="showMyLove()">
+            💖 Untuk Cintaku 💖
+        </button>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const birthday = new Date('2025-05-27T00:00:00');
+            const now = new Date();
+            const timeDiff = birthday - now;
+
+            if (timeDiff > 0) {
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div style="color: white; font-size: 2.5rem; text-align: center; font-family: Dancing Script;">🎉 HAPPY 19th BIRTHDAY MY LOVE! 🎉</div>';
+            }
+        }
+
+        // Floating Elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const loveEmojis = ['💖', '💕', '💝', '🌸', '🦋', '✨', '🌟', '💫', '🎈', '🎂', '🌹', '💐'];
+            
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.className = 'floating-item';
+                element.textContent = loveEmojis[Math.floor(Math.random() * loveEmojis.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 25 + 's';
+                element.style.fontSize = (Math.random() * 2 + 1.2) + 'rem';
+                container.appendChild(element);
+            }
+        }
+
+        // Heart Rain Effect
+        function createHeartRain() {
+            const hearts = ['💖', '💕', '💗', '💝'];
+            
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'love-hearts';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 8 + 's';
+                heart.style.fontSize = (Math.random() * 1 + 1.2) + 'rem';
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 8000);
+            }
+        }
+
+        // Confetti Effect
+        function createConfetti() {
+            const loveColors = ['#ff6b9d', '#feca57', '#ff9a9e', '#f093fb', '#fecfef', '#ffb3ba'];
+            
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = loveColors[Math.floor(Math.random() * loveColors.length)];
+                confetti.style.animationDelay = Math.random() * 4 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 7000);
+            }
+        }
+
+        // Love Celebration Function
+        function showMyLove() {
+            createConfetti();
+            createHeartRain();
+            
+            // Change background temporarily
+            document.body.style.background = 'linear-gradient(-45deg, #ff6b9d, #feca57, #ff9a9e, #f093fb, #fecfef, #ffb3ba)';
+            
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(-45deg, #ff9a9e, #fecfef, #fecfef, #ffc3a0, #f093fb, #764ba2)';
+            }, 4000);
+
+            // Love messages
+            const loveMessages = [
+                "Aku sayang banget sama kamu, Nasywa! 💖",
+                "Happy 19th Birthday, my precious angel! ✨",
+                "Kamu adalah cinta terbesar dalam hidup aku! 💕",
+                "Thank you for being my everything, sayang! 🌟",
+                "Selamat ulang tahun untuk pacarku! 👑"
+            ];
+            
+            setTimeout(() => {
+                alert(loveMessages[Math.floor(Math.random() * loveMessages.length)]);
+            }, 1000);
+        }
+
+        // Initialize
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        createFloatingElements();
+
+        // Create periodic heart rain
+        setInterval(createHeartRain, 12000);
+
+        // Auto-celebrate on birthday
+        const birthday = new Date('2025-05-27T00:00:00');
+        const now = new Date();
+        if (now.toDateString() === birthday.toDateString()) {
+            setTimeout(showMyLove, 3000);
+        }
+
+        // Add some romantic interactions
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '1.5rem';
+            heart.style.color = '#ff6b9d';
+            heart.style.pointerEvents = 'none';
+            heart.style.animation = 'heartFloat 2s ease-out forwards';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+        });
+    </script>
+</body>
+</html>
